@@ -1,0 +1,229 @@
+ -------Test 1-------
+LOCAL
+3
+1 0
+1 1
+1 2
+2 0
+2 1
+2 2
+
+Expected Results
+PID Page Faults
+1    3
+2    3
+Process 1 page table
+Page Frame
+0    0
+1    1
+2    2
+Process 2 page table
+Page Frame
+0    3
+1    4
+2    5
+-------Test 2-------
+GLOBAL
+3
+1 0
+1 1
+1 2
+2 0
+2 1
+2 2
+
+Expected Results
+PID Page Faults
+1    3
+2    3
+Process 1 page table
+Page Frame
+Process 2 page table
+Page Frame
+0    0
+1    1
+2    2
+-------Test 3-------
+LOCAL
+3
+1 0
+2 0
+1 1
+2 1
+1 2
+2 2
+
+Expected Results
+PID Page Faults
+1    3
+2    3
+Process 1 page table
+Page Frame
+0    0
+1    1
+2    2
+Process 2 page table
+Page Frame
+0    3
+1    4
+2    5
+-------Test 4-------
+GLOBAL
+3
+1 0
+2 0
+1 1
+2 1
+1 2
+2 2
+
+Expected Results
+PID Page Faults
+1    3
+2    3
+Process 1 page table
+Page Frame
+2    1
+Process 2 page table
+Page Frame
+1    0
+2    2
+-------Test 5-------
+GLOBAL
+20
+3 5
+1 7
+9 8
+6 3
+8 1
+17 3
+2 1
+7 9
+4 5
+
+Expected Results
+PID Page Faults
+3    1
+1    1
+9    1
+6    1
+8    1
+17    1
+2    1
+7    1
+4    1
+Process 3 page table
+Page Frame
+5    0
+Process 1 page table
+Page Frame
+7    1
+Process 9 page table
+Page Frame
+8    2
+Process 6 page table
+Page Frame
+3    3
+Process 8 page table
+Page Frame
+1    4
+Process 17 page table
+Page Frame
+3    5
+Process 2 page table
+Page Frame
+1    6
+Process 7 page table
+Page Frame
+9    7
+Process 4 page table
+Page Frame
+5    8
+-------Test 6-------
+GLOBAL
+5
+1 0
+2 1
+3 3
+1 0
+1 0
+1 0
+1 0
+2 5
+1 0
+1 1
+
+Expected Results
+PID Page Faults
+1    2
+2    2
+3    1
+Process 1 page table
+Page Frame
+0    0
+1    4
+Process 2 page table
+Page Frame
+1    1
+5    3
+Process 3 page table
+Page Frame
+3    2
+
+-------Test 8-------
+GLOBAL
+3
+2 2
+3 3
+5 5
+7 7
+11 13
+13 17
+17 19
+19 31
+23 61
+29 89
+31 107
+37 127
+
+Expected Results
+PID Page Faults
+2    1
+3    1
+5    1
+7    1
+11    1
+13    1
+17    1
+19    1
+23    1
+29    1
+31    1
+37    1
+Process 2 page table
+Page Frame
+Process 3 page table
+Page Frame
+Process 5 page table
+Page Frame
+Process 7 page table
+Page Frame
+Process 11 page table
+Page Frame
+Process 13 page table
+Page Frame
+Process 17 page table
+Page Frame
+Process 19 page table
+Page Frame
+Process 23 page table
+Page Frame
+Process 29 page table
+Page Frame
+89    0
+Process 31 page table
+Page Frame
+107    1
+Process 37 page table
+Page Frame
+127    2
